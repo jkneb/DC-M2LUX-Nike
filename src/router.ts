@@ -9,6 +9,6 @@ const routes = [
 ];
 
 export const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory("/DC-M2LUX-Nike"),
   routes,
 });

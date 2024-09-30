@@ -9,8 +9,8 @@
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <RouterLink to="./">Go to Home</RouterLink>
-  <RouterLink to="./product">Go to Product</RouterLink>
+  <RouterLink to="/">Go to Home</RouterLink>
+  <RouterLink to="/product">Go to Product</RouterLink>
 
   <RouterView />
 </template>
