@@ -6,9 +6,9 @@
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <g clip-path="url(#clip0_4_1314)">
+    <g clip-path="url(#clip0_4_1360)">
       <path
-        d="M19.5 9L12 16.5L4.5 9"
+        d="M3.75 13.5L9 18.75L21 6.75"
         stroke="black"
         stroke-width="2"
         stroke-linecap="round"
@@ -16,7 +16,7 @@
       />
     </g>
     <defs>
-      <clipPath id="clip0_4_1314">
+      <clipPath id="clip0_4_1360">
         <rect width="24" height="24" fill="white" />
       </clipPath>
     </defs>

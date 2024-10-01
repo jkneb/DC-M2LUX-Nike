@@ -1,6 +1,30 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import Header from "../components/Header.vue";
 import CaretDown from "../assets/icons/CaretDown.vue";
+import Check from "../assets/icons/Check.vue";
+import Close from "../assets/icons/Close.vue";
+
+const isDrawerVisible = ref(false);
+const selectedSize = ref("");
+
+function showDrawer() {
+  isDrawerVisible.value = true;
+}
+function hideDrawer() {
+  isDrawerVisible.value = false;
+}
+
+const SIZES_MAP: { [key: string]: any } = {
+  s: "S (32 au 39)",
+  m: "M (40 au 44)",
+  l: "L (45 au 49)",
+};
+
+function selectSize(event: any) {
+  selectedSize.value = event.target.id;
+  hideDrawer();
+}
 </script>
 
 <template>
@@ -15,19 +39,19 @@ import CaretDown from "../assets/icons/CaretDown.vue";
 
     <div class="products products-no-padding">
       <div class="product">
-        <RouterLink to="/product">
+        <a>
           <img src="../assets/Image05.png" alt="" />
-        </RouterLink>
+        </a>
       </div>
       <div class="product">
-        <RouterLink to="/product">
+        <a>
           <img src="../assets/Image06.png" alt="" />
-        </RouterLink>
+        </a>
       </div>
       <div class="product">
-        <RouterLink to="/product">
+        <a>
           <img src="../assets/Image07.png" alt="" />
-        </RouterLink>
+        </a>
       </div>
     </div>
 
@@ -51,8 +75,9 @@ import CaretDown from "../assets/icons/CaretDown.vue";
 
     <div class="bloc-section">
       <div class="button-group">
-        <button class="secondary">
-          Choisir une taille
+        <button class="secondary" @click="showDrawer">
+          <span v-if="selectedSize">{{ SIZES_MAP[selectedSize] }}</span>
+          <span v-else>Choisir une taille</span>
           <CaretDown />
         </button>
         <button>Ajouter au panier</button>
@@ -98,6 +123,26 @@ import CaretDown from "../assets/icons/CaretDown.vue";
       </a>
     </div>
   </div>
+
+  <div
+    :class="{ overlay: true, visible: isDrawerVisible }"
+    @click="hideDrawer"
+  ></div>
+  <div :class="{ drawer: true, visible: isDrawerVisible }">
+    <button class="drawer-close-icon" @click="hideDrawer"><Close /></button>
+    <div class="drawer-title">Sélectionnez une taille</div>
+
+    <button
+      v-for="item of Object.keys(SIZES_MAP)"
+      class="drawer-option"
+      :id="item"
+      @click="selectSize($event)"
+    >
+      {{ SIZES_MAP[item] }}
+
+      <Check v-if="selectedSize && selectedSize === item" />
+    </button>
+  </div>
 </template>
 
 <style scoped>
@@ -113,5 +158,64 @@ import CaretDown from "../assets/icons/CaretDown.vue";
 }
 .products {
   padding-bottom: var(--Spacings-Spacing-40);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: var(--Colors-Overlay-80);
+  transition: opacity 250ms ease;
+  opacity: 0;
+  z-index: 2;
+}
+.overlay.visible {
+  height: 100%;
+  opacity: 1;
+}
+.drawer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 3;
+  border-radius: 8px 8px 0 0;
+  background: var(--Colors-Primary-White);
+  transition: transform 250ms ease;
+  transform: translateY(101%);
+  padding-bottom: var(--Spacings-Spacing-40);
+}
+.drawer.visible {
+  transform: translateY(0%);
+}
+.drawer-title {
+  font: var(--Typo-Title-sm);
+  padding: 28px var(--Spacings-Spacing-24);
+}
+.drawer-option {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  color: inherit;
+  display: flex;
+  border: 0;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  font: var(--Typo-Text-xl);
+  border-top: 1px solid var(--Colors-Gray-200);
+  padding: 28px var(--Spacings-Spacing-24);
+}
+.drawer-close-icon {
+  position: absolute;
+  top: 28px;
+  right: var(--Spacings-Spacing-24);
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 </style>
