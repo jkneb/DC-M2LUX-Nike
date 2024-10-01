@@ -215,6 +215,7 @@ function selectSize(event: any) {
   right: var(--Spacings-Spacing-24);
   background: none;
   border: none;
+  border-radius: 0;
   padding: 0;
   margin: 0;
 }

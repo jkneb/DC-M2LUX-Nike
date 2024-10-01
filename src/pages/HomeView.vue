@@ -63,6 +63,7 @@
   padding: var(--Spacings-Spacing-32) var(--Spacings-Spacing-20) 0
     var(--Spacings-Spacing-20);
   font: var(--Typo-Title-sm);
+  margin-bottom: var(--Spacings-Spacing-4);
 }
 .products-no-padding {
   padding: 0;
