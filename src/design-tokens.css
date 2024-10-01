@@ -1,0 +1,42 @@
+:root {
+  --Typo-Title-2xl: 400 32px/120% Helvetica;
+  --Typo-Title-xl: 400 28px/120% Helvetica;
+  --Typo-Title-lg: 400 28px/110% Helvetica;
+  --Typo-Title-md: 400 24px/120% Helvetica;
+  --Typo-Title-sm: 400 20px/120% Helvetica;
+
+  --Typo-Text-2xl: 400 16px/100% Helvetica;
+  --Typo-Text-xl: 400 16px/120% Helvetica;
+  --Typo-Text-lg: 400 16px/150% Helvetica;
+  --Typo-Text-md: 400 14px/120% Helvetica;
+  --Typo-Text-sm: 400 12px/100% Helvetica;
+  --Typo-Text-xs: 400 10px/100% Helvetica;
+
+  --Colors-Primary-Dark: #000000;
+  --Colors-Primary-White: #ffffff;
+  --Colors-Gray-100: #f6f6f6;
+  --Colors-Gray-200: #e4e4e4;
+  --Colors-Gray-300: #cdcdcd;
+  --Colors-Gray-400: #bababa;
+  --Colors-Gray-500: #8c8c8c;
+  --Colors-Gray-600: #767676;
+  --Colors-Gray-700: #57595b;
+  --Colors-Gray-800: #28292a;
+  --Colors-Overlay-20: rgba(0, 0, 0, 0.2);
+  --Colors-Overlay-50: rgba(0, 0, 0, 0.5);
+  --Colors-Overlay-80: rgba(0, 0, 0, 0.8);
+
+  --Spacings-Spacing-2: 2px;
+  --Spacings-Spacing-4: 4px;
+  --Spacings-Spacing-8: 8px;
+  --Spacings-Spacing-12: 12px;
+  --Spacings-Spacing-16: 16px;
+  --Spacings-Spacing-20: 20px;
+  --Spacings-Spacing-24: 24px;
+  --Spacings-Spacing-32: 32px;
+  --Spacings-Spacing-40: 40px;
+  --Spacings-Spacing-48: 48px;
+  --Spacings-Spacing-64: 64px;
+  --Spacings-Spacing-96: 96px;
+  --Spacings-Spacing-128: 128px;
+}
