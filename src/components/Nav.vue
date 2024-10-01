@@ -70,6 +70,7 @@ nav a {
   font: var(--Typo-Text-xs);
   color: var(--Colors-Gray-600);
   display: flex;
+  text-decoration: none;
   flex-direction: column;
   align-items: center;
   gap: 3px 0;

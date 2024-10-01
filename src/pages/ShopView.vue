@@ -3,7 +3,7 @@
 <template>
   <div class="heading">
     <h1>Shop</h1>
-    <span class="subtitle">Mercredi 21 août</span>
+    <span class="subtitle dimmed">Mercredi 21 août</span>
   </div>
 </template>
 

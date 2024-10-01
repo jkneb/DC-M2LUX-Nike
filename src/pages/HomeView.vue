@@ -59,9 +59,20 @@
   padding: 0 var(--Spacings-Spacing-20);
   margin-bottom: var(--Spacings-Spacing-16);
 }
+.products-title {
+  padding: var(--Spacings-Spacing-32) var(--Spacings-Spacing-20) 0
+    var(--Spacings-Spacing-20);
+  font: var(--Typo-Title-sm);
+}
+.products-no-padding {
+  padding: 0;
+}
 .products img {
   max-width: none;
   min-width: auto;
+}
+.products a {
+  text-decoration: none;
 }
 .product {
   display: flex;
@@ -71,7 +82,7 @@
 .product-label {
   font: var(--Typo-Title-sm);
 }
-.product a:hover {
-  color: inherit;
+.product-label-small {
+  font: 400 10.29px/120% Helvetica;
 }
 </style>

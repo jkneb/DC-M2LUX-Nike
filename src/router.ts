@@ -18,5 +18,8 @@ const routes = [
 
 export const router = createRouter({
   history: createWebHashHistory("/DC-M2LUX-Nike"),
+  scrollBehavior() {
+    return { top: 0 }; // always scroll to top
+  },
   routes,
 });

@@ -1,0 +1,180 @@
+.sc-neo-accordion-item-h {
+  --accordion-background-color: transparent;
+  --accordion-color-title: var(--color-gray-text);
+  --accordion-color-subtitle: var(--color-gray-text-discrete);
+  --accordion-color-icon: var(--color-primary-shape);
+  --accordion-font-title: var(--typography-body-m-regular);
+  --accordion-font-subtitle: var(--typography-body-xs-regular);
+  --accordion-padding: var(--size-space-100) var(--size-space-100)
+    var(--size-space-100) var(--size-space-150);
+  --accordion-content-padding: var(--size-space-100) var(--size-space-150)
+    var(--size-space-150);
+  --accordion-radius: var(--size-radius-s);
+  --accordion-arrow-size: var(--size-space-400);
+  --accordion-arrow-font-size: var(--size-space-200);
+  --accordion-icon-size: var(--size-space-500);
+  --accordion-animation-duration: 350ms;
+  display: block;
+  background-color: var(--accordion-background-color);
+  margin: 0;
+  border-radius: var(--accordion-radius);
+  box-sizing: border-box;
+  position: relative;
+}
+.neo-accordion.sc-neo-accordion-item-h {
+  margin: 0;
+  width: auto;
+  min-width: 288px;
+}
+.neo-accordion.sc-neo-accordion-item-h::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  content: "";
+  pointer-events: none;
+  border: var(--size-border-xs) solid var(--color-gray-border);
+  border-radius: var(--accordion-radius);
+}
+.neo-accordion.sc-neo-accordion-item-h
+  .neo-accordion-button.sc-neo-accordion-item {
+  border: 0;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: var(--size-space-100);
+  padding: var(--accordion-padding);
+  margin: 0;
+  border-radius: var(--accordion-radius);
+  box-sizing: inherit;
+  transition: background-color 350ms ease;
+}
+.neo-accordion.sc-neo-accordion-item-h
+  .neo-accordion-button[aria-expanded="true"].sc-neo-accordion-item {
+  --accordion-radius: var(--size-radius-s) var(--size-radius-s) 0 0;
+}
+@media (hover: hover) and (pointer: fine) {
+  .neo-accordion.sc-neo-accordion-item-h
+    .neo-accordion-button.sc-neo-accordion-item:hover {
+    --accordion-color-title: var(--color-gray-text-hover);
+    background-color: var(--color-gray-surface-discrete-hover);
+  }
+}
+.neo-accordion.sc-neo-accordion-item-h
+  .neo-accordion-icon.sc-neo-accordion-item {
+  --neo-icon-color: var(--accordion-color-icon);
+  flex: 0 0 auto;
+  box-sizing: inherit;
+}
+.neo-accordion.sc-neo-accordion-item-h
+  .neo-accordion-icon.sc-neo-accordion-item
+  > svg.sc-neo-accordion-item {
+  width: var(--accordion-icon-size);
+  height: var(--accordion-icon-size);
+}
+.neo-accordion.sc-neo-accordion-item-h
+  .neo-accordion-title.sc-neo-accordion-item {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+.neo-accordion.sc-neo-accordion-item-h
+  .neo-accordion-title-text.sc-neo-accordion-item {
+  font: var(--accordion-font-title);
+  text-align: left;
+  color: var(--accordion-color-title);
+  transition: color 350ms ease;
+}
+.neo-accordion.sc-neo-accordion-item-h
+  .neo-accordion-title-subtitle.sc-neo-accordion-item {
+  font: var(--typography-body-xs-regular);
+  text-align: left;
+  color: var(--accordion-color-subtitle);
+}
+.neo-accordion.sc-neo-accordion-item-h
+  .neo-accordion-arrow.sc-neo-accordion-item {
+  --neo-icon-color: var(--accordion-color-icon);
+  --neo-icon-font-size: var(--accordion-arrow-font-size);
+  display: flex;
+  flex: 0 0 auto;
+  box-sizing: inherit;
+  width: var(--accordion-arrow-size);
+  height: var(--accordion-arrow-size);
+  align-items: center;
+  justify-content: center;
+}
+.neo-accordion.sc-neo-accordion-item-h
+  .neo-accordion-content.sc-neo-accordion-item {
+  display: grid;
+  visibility: visible;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows var(--accordion-animation-duration) ease 100ms,
+    visibility var(--accordion-animation-duration) ease 100ms;
+}
+.neo-accordion.sc-neo-accordion-item-h
+  .neo-accordion-content[hidden].sc-neo-accordion-item {
+  --accordion-content-padding: 0 var(--size-space-150);
+  visibility: hidden;
+  grid-template-rows: 0fr;
+}
+.neo-accordion.sc-neo-accordion-item-h
+  .neo-accordion-content[hidden].sc-neo-accordion-item
+  .neo-accordion-content-wrapper.sc-neo-accordion-item {
+  opacity: 0;
+  transition: opacity var(--accordion-animation-duration) ease,
+    padding var(--accordion-animation-duration) ease;
+}
+.neo-accordion.sc-neo-accordion-item-h
+  .neo-accordion-content-wrapper.sc-neo-accordion-item {
+  overflow: hidden;
+  padding: var(--accordion-content-padding);
+  opacity: 1;
+  transition: opacity var(--accordion-animation-duration) ease 200ms,
+    padding var(--accordion-animation-duration) ease;
+}
+.neo-accordion-group-s.sc-neo-accordion-item-h,
+.neo-accordion-group-s .sc-neo-accordion-item-h {
+  --accordion-font-title: var(--typography-body-s-regular);
+  --accordion-padding: var(--size-space-50) var(--size-space-100)
+    var(--size-space-50) var(--size-space-150);
+}
+.neo-accordion-group-bottom.sc-neo-accordion-item-h,
+.neo-accordion-group-bottom .sc-neo-accordion-item-h {
+  --accordion-radius: 0;
+  --accordion-padding: var(--size-space-100) var(--size-space-50)
+    var(--size-space-100) var(--size-space-100);
+  --accordion-content-padding: var(--size-space-100) var(--size-space-150);
+}
+.neo-accordion-group-bottom.neo-accordion.sc-neo-accordion-item-h,
+.neo-accordion-group-bottom .neo-accordion.sc-neo-accordion-item-h {
+  border-bottom: var(--size-border-xs) solid var(--color-gray-border);
+}
+.neo-accordion-group-bottom.neo-accordion.sc-neo-accordion-item-h:after,
+.neo-accordion-group-bottom .neo-accordion.sc-neo-accordion-item-h:after {
+  display: none;
+}
+.neo-accordion-group-bottom.neo-accordion.sc-neo-accordion-item-h
+  .neo-accordion-button.sc-neo-accordion-item,
+.neo-accordion-group-bottom
+  .neo-accordion.sc-neo-accordion-item-h
+  .neo-accordion-button.sc-neo-accordion-item {
+  --accordion-radius: 0;
+}
+.neo-accordion-group-bottom.neo-accordion-group-s.sc-neo-accordion-item-h,
+.neo-accordion-group-bottom.neo-accordion-group-s .sc-neo-accordion-item-h {
+  --accordion-padding: var(--size-space-50) var(--size-space-50)
+    var(--size-space-50) var(--size-space-100);
+}
+slot-fb {
+  display: contents;
+}
+slot-fb[hidden] {
+  display: none;
+}

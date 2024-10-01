@@ -27,6 +27,10 @@ main {
   padding-right: var(--Spacings-Spacing-20);
 }
 
+svg {
+  stroke: var(--Colors-Primary-Dark);
+}
+
 img {
   max-width: 100%;
   min-width: 100%;
@@ -38,10 +42,12 @@ img {
 a {
   font-weight: 500;
   color: inherit;
-  text-decoration: inherit;
+  text-decoration: underline;
+  cursor: pointer;
 }
-a:hover {
-  color: #535bf2;
+a:hover,
+a:visited {
+  color: inherit;
 }
 
 /* Titles */
@@ -49,37 +55,63 @@ h1,
 h2,
 h3 {
   margin: 0;
+  color: inherit;
 }
 h1 {
   font: var(--Typo-Title-2xl);
-  color: inherit;
 }
 .subtitle {
   font: var(--Typo-Title-sm);
 }
 h2 {
   font: var(--Typo-Title-2xl);
-  color: inherit;
+}
+h3 {
+  font: var(--Typo-Title-md);
 }
 .dimmed {
   color: var(--Colors-Gray-600);
 }
+p {
+  margin: 0;
+  font: var(--Typo-Text-lg);
+}
+
+/* Hiding class, making content visible only to screen readers but not visually */
+/* "sr" meaning "screen-reader" */
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--Spacings-Spacing-24);
+}
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  border-radius: 100px;
+  border: 1px solid var(--Colors-Primary-Dark);
+  background: var(--Colors-Primary-Dark);
+  padding: var(--Spacings-Spacing-16) 51px;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all ease 0.25s;
+  font: var(--Typo-Text-2xl);
+  color: var(--Colors-Primary-White);
+  display: flex;
+  gap: calc(var(--Spacings-Spacing-12) - 2px);
+  align-items: center;
+  justify-content: center;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+button.secondary {
+  color: var(--Colors-Primary-Dark);
+  border: 1px solid var(--Colors-Gray-300);
+  background: var(--Colors-Primary-White);
 }
