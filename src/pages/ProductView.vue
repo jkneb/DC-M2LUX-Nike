@@ -183,7 +183,7 @@ function selectSize(event: any) {
   z-index: 3;
   border-radius: 8px 8px 0 0;
   background: var(--Colors-Primary-White);
-  transition: transform 250ms ease;
+  transition: transform 800ms linear;
   transform: translateY(101%);
   padding-bottom: var(--Spacings-Spacing-40);
 }
